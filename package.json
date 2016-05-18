@@ -1,0 +1,22 @@
+{
+  "name": "intro-me-backend",
+  "version": "1.0.0",
+  "description": "this handles and serves REST requests from angular controllers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-ninjas/intro-me-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/js-ninjas/intro-me-backend/issues"
+  },
+  "homepage": "https://github.com/js-ninjas/intro-me-backend#readme",
+  "dependencies": {
+    "mongoose": "^4.4.17"
+  }
+}
