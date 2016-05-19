@@ -14,7 +14,7 @@ dbHandler.prototype.updateData = function () {
 
 };
 
-dbHandler.prototype.deletData = function () {
+dbHandler.prototype.deleteData = function () {
 
 };
 
