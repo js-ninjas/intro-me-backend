@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/js-ninjas/intro-me-backend#readme",
   "dependencies": {
+    "hapi": "^13.4.0",
+    "mongodb": "^2.1.19",
     "mongoose": "^4.4.17"
   }
 }
