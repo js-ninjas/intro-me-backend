@@ -21,8 +21,15 @@ server.route({
     method: 'GET',
     path: '/getHobby',
     handler: function (request, reply) {
-        new hobbiesHandler().getHobby();
-        return reply('hello world');
+        new hobbiesHandler().getHobby(function (err, data) {
+            if (err) {
+                return reply("Data not found");
+            }
+            else { // return the result
+                return reply(JSON.stringify(data));
+            }
+        });
+
     }
 });
 
@@ -33,4 +40,4 @@ server.start(function (err) {
         throw err;
     }
     console.log('Server running at:', server.info.uri);
-})
+});
