@@ -4,7 +4,8 @@ var hobbiesHandler = require('./node_components/RESTHandlers/hobbiesHandler')
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
-    port: 8000
+    port: 8000,
+    routes: {cors: true}
 });
 
 // Add the route
