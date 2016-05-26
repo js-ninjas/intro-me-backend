@@ -5,9 +5,10 @@ function dbConnector() {
 
 dbConnector.prototype.getDbObject = function (callback) {
     var MongoClient = require('mongodb').MongoClient;
-    console.log("URL " + configure.url)
+    var dbUrl = "mongodb://" + configure.hostName + ':' + configure.mongoPort + '/' + configure.dBName;
+    console.log("URL " + dbUrl)
 // Connect to the db
-    MongoClient.connect(configure.url, function (err, db) {
+    MongoClient.connect(dbUrl, function (err, db) {
         if (!err) {
             console.log("We are connected");
             callback(null, db);
