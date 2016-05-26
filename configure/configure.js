@@ -1,7 +1,7 @@
 /*DB CONFIGURATIONS*/
 var hostName="localhost",
     mongoPort=27017,
-    dBName="myDb";
+    dBName="introMe";
 
 
 /*Node Configurations*/
