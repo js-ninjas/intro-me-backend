@@ -8,7 +8,7 @@ var hostName="localhost",
 
 
 /*make it visible to other files*/
-module.exports.url = url;
+//module.exports.url = url;
 module.exports.hostName = hostName;
 module.exports.mongoPort = mongoPort;
 module.exports.dBName = dBName;
