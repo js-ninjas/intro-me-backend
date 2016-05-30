@@ -15,15 +15,37 @@ hobbiesHandler.prototype.getHobby = function (callback) {
     });
 };
 
-hobbiesHandler.prototype.postHobby = function () {
-
+hobbiesHandler.prototype.postHobby = function (query,callback) {
+	new dbHandler().insertData('hobbies', query, function (err, data) {
+        if (err) {
+            callback(err, null);
+        }
+        else {
+            callback(null, data);
+        }
+    });
 };
 
-hobbiesHandler.prototype.updateHobby = function () {
-
+hobbiesHandler.prototype.updateHobby = function (query,callback) {
+	new dbHandler().updateData('hobbies', query, function (err, data) {
+        if (err) {
+            callback(err, null);
+        }
+        else {
+            callback(null, data);
+        }
+    });
 };
 
-hobbiesHandler.prototype.deleteHobby = function () {
+hobbiesHandler.prototype.deleteHobby = function (query,callback) {
+	new dbHandler().deleteData('hobbies', query, function (err, data) {
+        if (err) {
+            callback(err, null);
+        }
+        else {
+            callback(null, data);
+        }
+    });
 
 };
 

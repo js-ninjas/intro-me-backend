@@ -17,7 +17,7 @@ dbHandler.prototype.getData = function (collectionName, query, callback) {
                 }
                 else {
                     console.log("DATA CAME HERE")
-                    console.log(data)
+                    // console.log(data)
                     callback(null, data);
                 }
             });
@@ -39,8 +39,8 @@ dbHandler.prototype.insertData = function (collectionName, query, callback) {
                     callback(err, null);
                 }
                 else {
-                    console.log("Insert DATA CAME HERE")
-                    console.log(data)
+                    console.log("Inserted DATA CAME HERE")
+                    // console.log(data)
                     callback(null, data);
                 }
             });
@@ -63,8 +63,8 @@ dbHandler.prototype.updateData = function (collectionName, query, callback) {
                     callback(err, null);
                 }
                 else {
-                    console.log("Insert DATA CAME HERE")
-                    console.log(data)
+                    console.log("Data gets updated")
+                    // console.log(data)
                     callback(null, data);
                 }
             });
@@ -87,8 +87,8 @@ dbHandler.prototype.deleteData = function (collectionName, query, callback) {
                     callback(err, null);
                 }
                 else {
-                    console.log("Insert DATA CAME HERE")
-                    console.log(data)
+                     console.log("data gets deleted ")
+                    // console.log(data)
                     callback(null, data);
                 }
             });

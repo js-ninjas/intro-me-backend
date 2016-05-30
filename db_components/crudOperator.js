@@ -16,7 +16,7 @@ crudOperator.prototype.find = function (dbObj, collectionName, query, callback) 
             dbObj.close();
         }
         else {
-            console.log("Found the following records");
+            console.log("Selecting the following records");
             //console.log(result);
             callback(null, result);
             dbObj.close();
@@ -32,8 +32,8 @@ crudOperator.prototype.insert = function (dbObj, collectionName, query, callback
         query = {}
     }
     console.log("CollectionName " + collectionName);
-    console.log("Ister Data");
-    console.log(query['postData']);
+    // console.log("Ister Data");
+    // console.log(query['postData']);
 
     collectionObj.insert(query['postData'],function (err, result) {
         if (err) {
@@ -43,7 +43,7 @@ crudOperator.prototype.insert = function (dbObj, collectionName, query, callback
             dbObj.close();
         }
         else {
-            console.log("Found the following records");
+            console.log("Inserting records");
             //console.log(result);
             callback(null, result);
             dbObj.close();
@@ -54,8 +54,8 @@ crudOperator.prototype.insert = function (dbObj, collectionName, query, callback
 };
 
 crudOperator.prototype.update = function (dbObj, collectionName, query, callback) {
-    console.log("DATATTATAT dbHandler");
-        console.log(query['postData']);
+    // console.log("DATATTATAT dbHandler");
+    //     console.log(query['postData']);
 
     var collectionObj = dbObj.collection(collectionName);
     if (query == null) {
@@ -70,7 +70,7 @@ crudOperator.prototype.update = function (dbObj, collectionName, query, callback
             dbObj.close();
         }
         else {
-            console.log("Found the following records");
+            console.log("Updating records");
             //console.log(result);
             callback(null, result);
             dbObj.close();
@@ -85,8 +85,8 @@ crudOperator.prototype.delete = function (dbObj, collectionName, query, callback
     if (query == null) {
         query = {}
     }
-    console.log("what to delete");
-    console.log(query['postData']);
+    // console.log("what to delete");
+    // console.log(query['postData']);
     console.log("CollectionName " + collectionName);
     collectionObj.remove(query['postData'],function (err, result) {
         if (err) {
@@ -96,8 +96,8 @@ crudOperator.prototype.delete = function (dbObj, collectionName, query, callback
             dbObj.close();
         }
         else {
-            console.log("Found the following records");
-            //console.log(result);
+            console.log("Deleting records");
+            // console.log(result);
             callback(null, result);
             dbObj.close();
         }
