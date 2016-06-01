@@ -139,10 +139,12 @@ server.route({
     method: 'POST',
     path: '/experience',
     handler: function (request, reply) {
-        console.log("DATATTATAT")
+        console.log("Recived Data Type")
         console.log(typeof request.payload)
+        console.log("DATATTATAT Complete")
         var query={};
-        query['postData']=JSON.parse(request.payload);
+        query['postData']=request.payload;
+        console.log(query['postData']);
 
         new experienceHandler().postExperience(query,function (err, data) {
             if (err) {
@@ -162,10 +164,14 @@ server.route({
     method: 'PUT',
     path: '/experience',
     handler: function (request, reply) {
-        console.log("DATATTATAT")
-        console.log(typeof request.payload)
+        
         var query={};
+        delete request.payload['_id'];
         query['postData']=JSON.parse(request.payload);
+        query['query']=request.query;
+        console.log("DATATTATAT  putTTTTTTT ")
+        console.log( request.query);
+        console.log(typeof request.payload);
 
         new experienceHandler().updateExperience(query,function (err, data) {
             if (err) {
@@ -186,9 +192,10 @@ server.route({
     path: '/experience',
     handler: function (request, reply) {
         console.log("DATATTATAT")
-        console.log( request.query);
+        console.log(request.query);
         var query={};
-        query['postData']=request.query;
+        //query['postData']=request.query;
+        query['query']=request.query;
 
         new experienceHandler().deleteExperience(query,function (err, data) {
             if (err) {

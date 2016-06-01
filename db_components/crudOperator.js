@@ -62,7 +62,7 @@ crudOperator.prototype.update = function (dbObj, collectionName, query, callback
         query = {}
     }
     console.log("CollectionName " + collectionName);
-    collectionObj.update({},{$set:query['postData']},function (err, result) {
+    collectionObj.update(query['query'],{$set:query['postData']},function (err, result) {
         if (err) {
             console.log("error in crudOperation- update()");
             console.log(err);
@@ -88,7 +88,7 @@ crudOperator.prototype.delete = function (dbObj, collectionName, query, callback
     // console.log("what to delete");
     // console.log(query['postData']);
     console.log("CollectionName " + collectionName);
-    collectionObj.remove(query['postData'],function (err, result) {
+    collectionObj.remove(query['query'],function (err, result) {
         if (err) {
             console.log("error in crudOperation- delete()");    
             console.log(err);
