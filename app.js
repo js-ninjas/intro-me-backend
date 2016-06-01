@@ -15,14 +15,14 @@ server.connection({
 });
 
 // Add the route
-server.route({
+/*server.route({
     method: 'POST',
     path: '/saveHobby',
     handler: function (request, reply) {
         new hobbiesHandler().postHobby();
         return reply('hello world');
     }
-});
+});*/
 
 /* /hobbies get and post PUT DLETE routes */
 //1. get (select )all Hobby
@@ -51,7 +51,7 @@ server.route({
         console.log("DATATTATAT")
         console.log(typeof request.payload)
         var query={};
-        query['postData']=JSON.parse(request.payload);
+        query['postData']=request.payload;//JSON.parse(request.payload);
 
         new hobbiesHandler().postHobby(query,function (err, data) {
             if (err) {
@@ -74,12 +74,13 @@ server.route({
         console.log("DATATTATAT")
         console.log(typeof request.payload)
         var query={};
-        query['postData']=JSON.parse(request.payload);
+
+        query['postData']=JSON.parse(request.payload);// CONVERTING TO JSON OBJECT 
+        query['query']=request.query;
 
         new hobbiesHandler().updateHobby(query,function (err, data) {
             if (err) {
                 return reply("Data not found");
-                console.log("sajdlsjddsajdkasjdlajsldjasldjlsaj$#####");
             }
             else { // return the result
                 return reply(JSON.stringify(data));
@@ -95,9 +96,10 @@ server.route({
     path: '/hobbies',
     handler: function (request, reply) {
         console.log("DATATTATAT")
-        //console.log( request.query);
+        console.log(request.query);
         var query={};
-        query['postData']=request.query;
+        //query['postData']=request.query;
+        query['query']=request.query;
         console.log(query['postData']);
 
         new hobbiesHandler().deleteHobby(query,function (err, data) {

@@ -88,6 +88,8 @@ crudOperator.prototype.delete = function (dbObj, collectionName, query, callback
     // console.log("what to delete");
     // console.log(query['postData']);
     console.log("CollectionName " + collectionName);
+     console.log(query);
+
     collectionObj.remove(query['query'],function (err, result) {
         if (err) {
             console.log("error in crudOperation- delete()");    

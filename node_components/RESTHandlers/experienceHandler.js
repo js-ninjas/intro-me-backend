@@ -20,8 +20,6 @@ experienceHandler.prototype.postExperience = function (query,callback) {
 
 	// var query = {};
 	// query=query;
-	console.log("DATATTATAT experienceHandler");
-        console.log(query['postData']);
 
     new dbHandler().insertData('experiences', query, function (err, data) {
         if (err) {
@@ -36,9 +34,6 @@ experienceHandler.prototype.postExperience = function (query,callback) {
 
 experienceHandler.prototype.updateExperience = function (query,callback) {
 
-	console.log("DATATTATAT experienceHandler");
-        console.log(query['postData']);
-
     new dbHandler().updateData('experiences', query, function (err, data) {
         if (err) {
             callback(err, null);
@@ -50,9 +45,6 @@ experienceHandler.prototype.updateExperience = function (query,callback) {
 };
 
 experienceHandler.prototype.deleteExperience = function (query,callback) {
-
-	console.log("DATATTATAT experienceHandler");
-        console.log(query['postData']);
 
     new dbHandler().deleteData('experiences', query, function (err, data) {
         if (err) {
