@@ -64,7 +64,7 @@ dbHandler.prototype.updateData = function (collectionName, query, callback) {
                 }
                 else {
                     console.log("Data gets updated")
-                    // console.log(data)
+                     //console.log(data)
                     callback(null, data);
                 }
             });

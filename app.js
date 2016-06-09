@@ -14,16 +14,6 @@ server.connection({
     routes: {cors: true}
 });
 
-// Add the route
-/*server.route({
-    method: 'POST',
-    path: '/saveHobby',
-    handler: function (request, reply) {
-        new hobbiesHandler().postHobby();
-        return reply('hello world');
-    }
-});*/
-
 /* /hobbies get and post PUT DLETE routes */
 //1. get (select )all Hobby
 server.route({
@@ -237,7 +227,7 @@ server.route({
     method: 'POST',
     path: '/education',
     handler: function (request, reply) {
-        console.log("DATATTATAT")
+        console.log("DATATTATAT EDUCATION")
         console.log(typeof request.payload)
         var query={};
         query['postData']=JSON.parse(request.payload);
@@ -261,9 +251,10 @@ server.route({
     path: '/education',
     handler: function (request, reply) {
         console.log("DATATTATAT")
-        console.log(typeof request.payload)
+        console.log(request.query);
         var query={};
         query['postData']=JSON.parse(request.payload);
+        query['query']=request.query;
 
         new educationHandler().updateEducation(query,function (err, data) {
             if (err) {
@@ -279,7 +270,8 @@ server.route({
 });
 
 //4. DELETE (Delete) delete education
-server.route({
+/*  DELETE FUCTION IS NOT REQUIRED  FRO EDUCATIONAL DETAILS*/
+/*server.route({
     method: 'DELETE',
     path: '/education',
     handler: function (request, reply) {
@@ -300,7 +292,7 @@ server.route({
         });
 
     }
-});
+});*/
 
 
 
@@ -357,11 +349,12 @@ server.route({
         console.log(typeof request.payload)
         var query={};
         query['postData']=JSON.parse(request.payload);
+        query['query']=request.query;
 
         new achievementHandler().updateAchievement(query,function (err, data) {
             if (err) {
                 return reply("Data not found");
-                console.log("sajdlsjddsajdkasjdlajsldjasldjlsaj$#####");
+                //console.log("sajdlsjddsajdkasjdlajsldjasldjlsaj$#####");
             }
             else { // return the result
                 return reply(JSON.stringify(data));

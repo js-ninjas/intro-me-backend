@@ -70,7 +70,7 @@ crudOperator.prototype.update = function (dbObj, collectionName, query, callback
             dbObj.close();
         }
         else {
-            console.log("Updating records");
+            //console.log("Updating records");
             //console.log(result);
             callback(null, result);
             dbObj.close();

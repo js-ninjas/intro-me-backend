@@ -35,12 +35,12 @@ educationHandler.prototype.postEducation = function (query,callback) {
         }
     });
 
-};
+};/**/
 
 educationHandler.prototype.updateEducation = function (query,callback) {
 
-	console.log("DATATTATAT educationHandler");
-        console.log(query['postData']);
+	// console.log("DATATTATAT educationHandler Update");
+ //        console.log(query['postData']);
 
     new dbHandler().updateData('education', query, function (err, data) {
         if (err) {
@@ -52,6 +52,8 @@ educationHandler.prototype.updateEducation = function (query,callback) {
     });
 };
 
+/*  DELETE FUCTION IS NOT REQUIRED  FRO EDUCATIONAL DETAILS*/
+/*
 educationHandler.prototype.deleteEducation = function (query,callback) {
 
 	// console.log("DATATTATAT educationHandler");
@@ -66,6 +68,6 @@ educationHandler.prototype.deleteEducation = function (query,callback) {
         }
     });
 
-};
+};*/
 
 module.exports = educationHandler;
